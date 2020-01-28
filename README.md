@@ -1,1 +1,2 @@
-# GraphQL demo 
+## GraphQL Demo
+Fusemachines Knowledge Sharing Session
