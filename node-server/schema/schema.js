@@ -147,12 +147,24 @@ const PetType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
+    profiles: {
+      type: new GraphQLList(ProfileType),
+      resolve(parent, args) {
+        return profiles;
+      }
+    },
     profile: {
       type: ProfileType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         args.id
         return _.find(profiles, { id: args.id });
+      }
+    },
+    pets: {
+      type: new GraphQLList(PetType),
+      resolve(parent, args) {
+        return pets
       }
     },
     pet: {

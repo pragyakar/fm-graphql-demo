@@ -1,3 +1,13 @@
+# Fetch all profiles
+
+query {
+  profiles  {
+    id,
+    name, 
+    imageUrl
+  }
+}
+
 # Fetch partial user details with id as argument
 
 query {
@@ -8,17 +18,13 @@ query {
   }
 }
 
-# Fetch full user details with id as argument
+# Fetch all pets
 
 query {
-  profile(id:"001") {
-    id, 
+  pets  {
+    id,
     name, 
-    imageUrl, 
-    bio, 
-    email,
-    following,
-    followers
+    imageUrl
   }
 }
 
