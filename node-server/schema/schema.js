@@ -64,7 +64,8 @@ const pets = [
     animal: 'Dog',
     breed: 'Beagle', 
     age: 6,
-    imageUrl: 'https://placedog.net/360/360/'
+    imageUrl: 'https://placedog.net/360/360/',
+    ownerId: 'u1'
   },
   { 
     id: 'p2', 
@@ -72,7 +73,8 @@ const pets = [
     animal: 'Dog', 
     breed: 'Cross breed', 
     age: 3,
-    imageUrl: 'https://placedog.net/364/364/'
+    imageUrl: 'https://placedog.net/364/364/',
+    ownerId: 'u2'
   },
   { 
     id: 'p3', 
@@ -80,7 +82,8 @@ const pets = [
     animal: 'Dog', 
     breed: 'Siberian Husky', 
     age: 1,
-    imageUrl: 'https://placedog.net/365/365/'
+    imageUrl: 'https://placedog.net/365/365/',
+    ownerId: 'u3'
   },
   { 
     id: 'p4', 
@@ -88,15 +91,17 @@ const pets = [
     animal: 'Cat',
     breed: 'Persian', 
     age: 6,
-    imageUrl: 'https://placekitten.com/g/365/365'
+    imageUrl: 'https://placekitten.com/g/365/365',
+    ownerId: 'u4'
   },
   { 
     id: 'p5', 
     name: 'Sukka', 
     animal: 'Cat',
     breed: 'Siamese', 
-    age: 6,
-    imageUrl: 'https://placekitten.com/g/360/360'
+    age: 10,
+    imageUrl: 'https://placekitten.com/g/360/360',
+    ownerId: 'u4'
   },
 
 ]
@@ -123,6 +128,12 @@ const PetType = new GraphQLObjectType({
     breed: { type: GraphQLString },
     age: { type: GraphQLInt },
     imageUrl: {  type: GraphQLString },
+    owner: {
+      type: ProfileType,
+      resolve(parent, args) {
+        return _.find(profiles, { id: parent.ownerId})
+      }
+    }
   })
 });
 
