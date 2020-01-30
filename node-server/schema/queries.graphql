@@ -21,3 +21,17 @@ query {
     followers
   }
 }
+
+# Fetch user details along with list of pets owned
+
+query {
+  profile (id:"u4"){
+    id,
+    name,
+    pets {
+      name,
+      animal,
+      breed
+    }
+  }
+}

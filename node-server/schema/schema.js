@@ -6,7 +6,8 @@ const {
   GraphQLString, 
   GraphQLInt, 
   GraphQLSchema,
-  GraphQLID
+  GraphQLID,
+  GraphQLList
 } = graphql;
 
 const profiles = [
@@ -116,6 +117,12 @@ const ProfileType = new GraphQLObjectType({
     email: { type: GraphQLString },
     following: { type: GraphQLInt },
     followers: { type: GraphQLInt },
+    pets: { 
+      type: new GraphQLList(PetType),
+      resolve(parent, args) {
+        return _.filter(pets, { ownerId: parent.id })
+      }
+    }
   })
 });
 
