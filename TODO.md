@@ -15,9 +15,10 @@
 - ~~Setup Node API server with Express~~
 - ~~Add GraphQL dependencies~~
 - Setup mongo database
+- Setup mongo models 
 - Add environment variables
-- Setup mongoose schema 
-- Add api endpoints
+- ~~Add api endpoints for queries~~
+- Add api endpoints for mutations
 
 ### Mongo Database
 - Setup Mongo DB with mlab
