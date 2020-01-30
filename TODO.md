@@ -14,11 +14,11 @@
 ### Node Server
 - ~~Setup Node API server with Express~~
 - ~~Add GraphQL dependencies~~
-- Setup mongo database
-- Setup mongo models 
-- Add environment variables
+- ~~Setup mongo database~~
+- ~~Setup mongo models~~ 
+- ~~Add environment variables~~
 - ~~Add api endpoints for queries~~
-- Add api endpoints for mutations
+- ~~Add api endpoints for mutations~~
 
 ### Mongo Database
-- Setup Mongo DB with mlab
+- ~~Setup Mongo DB with mongo atlas~~
