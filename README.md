@@ -51,6 +51,19 @@ or
 ```
 
 ### Setup React App
-
+To setup the React App, make sure you are in the react-app directory. Install the dependencies using your preferred package manager.
+```
+> cd react-app
+> yarn
+or
+> npm install
+```
+Start the app using the run script. A browser window should open with the app running if you have properly setup the app. If the browser window does not open, visit http://localhost:3000/ in your browser window.
+```
+> yarn start
+or
+> npm run start
+```
+Note: Make sure that the database and the server are both up and running before you start the react-app.
 ## References 
 - [Gitmoji: Commit message emoji reference](https://gitmoji.carloscuesta.me/)
