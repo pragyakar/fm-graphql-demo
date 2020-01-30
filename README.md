@@ -24,8 +24,31 @@ To get started, clone the repo and cd into the cloned directory:
 ```
 
 ### Setup Database
+Create a database using mongo and copy the url of your database. Create a file to store your environment variables named '.env' inside the node-server directory.
+
+```
+> cd node-server
+> nano .env
+```
+Inside .env file, add the url of your database in DB_AUTH_SOURCE variable.
+```
+DB_AUTH_SOURCE=mongodb://localhost/example
+```
 
 ### Setup Node Server
+If you are not inside the node-server directory, cd into the directory. Install the dependencies using your preferred package manager. 
+```
+> cd node-server
+> yarn
+or 
+> npm install
+```
+Start the app using the run script. Logs stating that you the server is running and is connected to the database will appear if you have properly setup the app.
+```
+> yarn start
+or 
+> npm run start
+```
 
 ### Setup React App
 
