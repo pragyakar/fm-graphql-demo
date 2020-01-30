@@ -1,0 +1,23 @@
+# Fetch partial user details with id as argument
+
+query {
+  profile(id:"003") {
+    id, 
+    name,
+    imageUrl
+  }
+}
+
+# Fetch full user details with id as argument
+
+query {
+  profile(id:"001") {
+    id, 
+    name, 
+    imageUrl, 
+    bio, 
+    email,
+    following,
+    followers
+  }
+}
