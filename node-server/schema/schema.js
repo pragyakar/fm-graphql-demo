@@ -10,7 +10,8 @@ const {
   GraphQLInt, 
   GraphQLSchema,
   GraphQLID,
-  GraphQLList
+  GraphQLList,
+  GraphQLNonNull
 } = graphql;
 
 const profiles = [
@@ -181,10 +182,10 @@ const Mutation = new GraphQLObjectType({
     addProfile: {
       type: ProfileType,
       args: {
-        name: { type: GraphQLString },
+        name: { type: new GraphQLNonNull(GraphQLString) },
         imageUrl: {  type: GraphQLString },
         bio: { type: GraphQLString },
-        email: { type: GraphQLString }
+        email: { type: new GraphQLNonNull(GraphQLString) }
       },
       resolve(parent, args) {
         let profile = new Profile({
@@ -199,12 +200,12 @@ const Mutation = new GraphQLObjectType({
     addPet: {
       type: PetType,
       args: {
-        name: { type: GraphQLString },
-        imageUrl: {  type: GraphQLString },
-        animal: { type: GraphQLString },
-        breed: { type: GraphQLString },
-        age: { type: GraphQLInt },
-        ownerId: { type: GraphQLID }
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        imageUrl: {  type: new GraphQLNonNull(GraphQLString) },
+        animal: { type: new GraphQLNonNull(GraphQLString) },
+        breed: { type: new GraphQLNonNull(GraphQLString) },
+        age: { type: new GraphQLNonNull(GraphQLInt) },
+        ownerId: { type: new GraphQLNonNull(GraphQLID) }
       },
       resolve(parent, args) {
         let pet = new Pet({
