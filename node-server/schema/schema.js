@@ -19,45 +19,35 @@ const profiles = [
     name: 'Pragyakar Joshi', 
     imageUrl: 'https://avatars0.githubusercontent.com/u/46337447?s=460&v=4', 
     bio: 'GraphQL is so cool', 
-    email: 'pragyakar@fusemachines.com',
-    following: 88,
-    followers: 45
+    email: 'pragyakar@fusemachines.com'
   },
   { 
     id: 'u2', 
     name: 'Sanish Pradhananga', 
     imageUrl: 'https://avatars2.githubusercontent.com/u/19884461?s=460&v=4', 
     bio: 'Im better at GraphQL than Pragyakar', 
-    email: 'sanish.pradhananga@fusemachines.com',
-    following: 53,
-    followers: 67
+    email: 'sanish.pradhananga@fusemachines.com'
   },
   { 
     id: 'u3', 
     name: 'Rosy Shrestha', 
     imageUrl: 'https://scontent.fktm8-1.fna.fbcdn.net/v/t31.0-8/s960x960/21762864_127092424700879_7605025080411516842_o.jpg?_nc_cat=111&_nc_oc=AQk18XlKZsSaiotEOFBdk3e8CDza4SuE1Yu76iuVE6P8p2e1SJBQCZ3NUGaMue3WQKI&_nc_ht=scontent.fktm8-1.fna&oh=c711e3813dcd1401727c7d427087b5f9&oe=5ED8CEA0', 
     bio: 'These noobs think they know GraphQL', 
-    email: 'rosy@fusemachines.com',
-    following: 32,
-    followers: 90
+    email: 'rosy@fusemachines.com'
   },
   { 
     id: 'u4', 
     name: 'Sujan Shrestha', 
     imageUrl: 'https://avatars1.githubusercontent.com/u/28521955?s=460&v=4', 
     bio: 'GraphQL Supreme Leader', 
-    email: 'sujan.shrestha@fusemachines.com',
-    following: 87,
-    followers: 18
+    email: 'sujan.shrestha@fusemachines.com'
   },
   { 
     id: 'u5', 
     name: 'Saurav Maharjan', 
     imageUrl: 'https://avatars1.githubusercontent.com/u/29722184?s=460&v=4', 
     bio: 'Star my repo plis', 
-    email: 'saurav@fusemachines.com',
-    following: 22,
-    followers: 99
+    email: 'saurav@fusemachines.com'
   }
 ]
 
@@ -118,12 +108,11 @@ const ProfileType = new GraphQLObjectType({
     imageUrl: {  type: GraphQLString },
     bio: { type: GraphQLString },
     email: { type: GraphQLString },
-    following: { type: GraphQLInt },
-    followers: { type: GraphQLInt },
     pets: { 
       type: new GraphQLList(PetType),
       resolve(parent, args) {
         // return _.filter(pets, { ownerId: parent.id })
+        return Pet.find({ ownerId: parent.id });
       }
     }
   })
@@ -142,6 +131,7 @@ const PetType = new GraphQLObjectType({
       type: ProfileType,
       resolve(parent, args) {
         // return _.find(profiles, { id: parent.ownerId})
+        return Profile.findById(parent.id);
       }
     }
   })
@@ -154,6 +144,7 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(ProfileType),
       resolve(parent, args) {
         // return profiles;
+        return Profile.find({});
       }
     },
     profile: {
@@ -162,12 +153,14 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         args.id
         // return _.find(profiles, { id: args.id });
+        return Profile.findById(args.id);
       }
     },
     pets: {
       type: new GraphQLList(PetType),
       resolve(parent, args) {
         // return pets
+        return Pet.find({});
       }
     },
     pet: {
@@ -176,11 +169,59 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         args.id
         // return _.find(pets, { id: args.id })
+        return Pets.findById(args.id);
       }
     }
   }
 });
 
+const Mutation = new GraphQLObjectType({
+  name: 'Mutation',
+  fields: {
+    addProfile: {
+      type: ProfileType,
+      args: {
+        name: { type: GraphQLString },
+        imageUrl: {  type: GraphQLString },
+        bio: { type: GraphQLString },
+        email: { type: GraphQLString }
+      },
+      resolve(parent, args) {
+        let profile = new Profile({
+          name: args.name,
+          imageUrl: args.imageUrl,
+          bio: args.bio,
+          email: args.email
+        });
+        return profile.save();
+      }
+    },
+    addPet: {
+      type: PetType,
+      args: {
+        name: { type: GraphQLString },
+        imageUrl: {  type: GraphQLString },
+        animal: { type: GraphQLString },
+        breed: { type: GraphQLString },
+        age: { type: GraphQLInt },
+        ownerId: { type: GraphQLID }
+      },
+      resolve(parent, args) {
+        let pet = new Pet({
+          name: args.name,
+          imageUrl: args.imageUrl,
+          animal: args.animal,
+          breed: args.breed,
+          age: args.age,
+          ownerId: args.ownerId
+        });
+        return pet.save();
+      }
+    }
+  }
+})
+
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation: Mutation 
 });

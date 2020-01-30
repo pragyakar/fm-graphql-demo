@@ -41,3 +41,31 @@ query {
     }
   }
 }
+
+# Add new profile
+
+mutation {
+	addProfile(
+    name: "Sanish Pradhananga", 
+    imageUrl: "https://avatars2.githubusercontent.com/u/19884461?s=460&v=4", 
+    bio: "Im better at GraphQL than Pragyakar", 
+    email:"sanish.pradhananga@fusemachines.com"
+  ) {
+    name
+  }
+}
+
+# Add new pet
+
+mutation {
+	addPet (
+    name: "Happy", 
+    animal: "Dog",
+    breed: "Beagle", 
+    age: 6,
+    imageUrl: "https://placedog.net/360/360/",
+    ownerId: "5e32bb11c575be6529cc32d0"
+  ) {
+    name
+  }
+}
