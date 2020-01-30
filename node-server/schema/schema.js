@@ -1,6 +1,9 @@
 const graphql = require("graphql");
 const _ = require("lodash");
 
+const Profile = require("../models/profile");
+const Pet = require("../models/pet");
+
 const { 
   GraphQLObjectType, 
   GraphQLString, 
@@ -120,7 +123,7 @@ const ProfileType = new GraphQLObjectType({
     pets: { 
       type: new GraphQLList(PetType),
       resolve(parent, args) {
-        return _.filter(pets, { ownerId: parent.id })
+        // return _.filter(pets, { ownerId: parent.id })
       }
     }
   })
@@ -138,7 +141,7 @@ const PetType = new GraphQLObjectType({
     owner: {
       type: ProfileType,
       resolve(parent, args) {
-        return _.find(profiles, { id: parent.ownerId})
+        // return _.find(profiles, { id: parent.ownerId})
       }
     }
   })
@@ -150,7 +153,7 @@ const RootQuery = new GraphQLObjectType({
     profiles: {
       type: new GraphQLList(ProfileType),
       resolve(parent, args) {
-        return profiles;
+        // return profiles;
       }
     },
     profile: {
@@ -158,13 +161,13 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         args.id
-        return _.find(profiles, { id: args.id });
+        // return _.find(profiles, { id: args.id });
       }
     },
     pets: {
       type: new GraphQLList(PetType),
       resolve(parent, args) {
-        return pets
+        // return pets
       }
     },
     pet: {
@@ -172,7 +175,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         args.id
-        return _.find(pets, { id: args.id })
+        // return _.find(pets, { id: args.id })
       }
     }
   }
