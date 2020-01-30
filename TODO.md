@@ -8,10 +8,16 @@
 - Add steps to run app
 
 ### React App
-- Setup React app with CRA
+- ~~Setup React app with CRA~~
+- Setup React components structure
 
 ### Node Server
-- Setup Node API server with Express
+- ~~Setup Node API server with Express~~
+- ~~Add GraphQL dependencies~~
+- Setup mongo database
+- Add environment variables
+- Setup mongoose schema 
+- Add api endpoints
 
 ### Mongo Database
-- Setup Mongo DB
+- Setup Mongo DB with mlab
