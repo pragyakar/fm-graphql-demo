@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './Components/Home';
 import Pets from './Components/Pets';
-import People from './Components/People';
+import Owners from './Components/Owners';
 import NotFound from './Components/UIComponents/NotFound';
 import Navbar from './Components/UIComponents/Navbar';
 
@@ -14,7 +14,7 @@ const Router = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/pets" component={Pets}/>
-          <Route path="/people" component={People}/>
+          <Route path="/owners" component={Owners}/>
           <Route component={NotFound} />
         </Switch>
       </div>

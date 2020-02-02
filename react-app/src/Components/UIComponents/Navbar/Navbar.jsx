@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="navbar-grid">
         <NavItem label={'Home'} icon={'home'} route={'/'}/>
         <NavItem label={'Pets'} icon={'paw'} route={'/pets'}/>
-        <NavItem label={'People'} icon={'user-friends'} route={'/people'}/>
+        <NavItem label={'Owners'} icon={'user-friends'} route={'/owners'}/>
       </div> 
     </div>
   );

@@ -2,18 +2,18 @@ import React, { Fragment } from 'react';
 import TopBar from '../UIComponents/TopBar/TopBar';
 import Line from '../UIComponents/Line';
 
-const People = (props) => {
+const Owners = (props) => {
 
   const sendToNew = () => {
-    props.history.push('/people/add');
+    props.history.push('/owners/add');
   }
 
   return (
     <Fragment>
-      <TopBar title={'All People'} clickHandler={sendToNew}/>
+      <TopBar title={'All Owners'} clickHandler={sendToNew}/>
       <Line />
     </Fragment>
   );
 }
 
-export default People;
+export default Owners;
