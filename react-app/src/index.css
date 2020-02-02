@@ -1,6 +1,15 @@
+:root {
+  --brand-blue: #0F74D1;
+  --brand-light-blue: #D2E3EA;
+  --brand-grey: #B4B4B4;
+  --brand-light-grey: #F9F9F9;
+  --white: #FFFFFF;
+  --brand-font: 'Roboto', sans-serif; 
+}
+
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--brand-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
