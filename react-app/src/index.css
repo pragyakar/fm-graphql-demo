@@ -13,3 +13,39 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Navbar */
+
+.navbar {
+  position: fixed;
+  height: 60px;
+  background-color: var(--brand-light-grey);
+  width: 100%;
+  bottom: 0;
+}
+
+.navbar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.navbar-item {
+  padding: 12px;
+  color: var(--brand-grey);
+  text-align: center;
+}
+
+.navbar-item:hover, .navbar-item.active {
+  cursor: pointer;
+  color: var(--brand-blue);
+}
+
+.navbar-icon {
+  font-size: 20px;
+}
+
+.navbar-icon-label {
+  font-size: 13px;
+}
