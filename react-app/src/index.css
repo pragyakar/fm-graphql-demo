@@ -53,3 +53,36 @@ body {
 .navbar-icon-label {
   font-size: 13px;
 }
+
+/* Buttons */
+
+.button {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button.dark {
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: var(--brand-blue);
+  color: var(--white);
+}
+
+.button.light {
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: var(--brand-light-blue);
+  color: var(--brand-blue);
+}
+
+.button.clear {
+  color: var(--brand-blue);
+  font-weight: 400;
+}
