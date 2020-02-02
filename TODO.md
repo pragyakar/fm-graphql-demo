@@ -13,6 +13,7 @@
 - ~~Add brand colors and font~~
 - Create navbar component
 - Add react-router and create routes
+- ~~Add icons~~
 - Create home component
 - Create pets component
 - Create profiles component
