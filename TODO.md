@@ -22,6 +22,10 @@
 - Create pet details component
 - Create profile details component
 - Create 404 component
+- Create empty state
+- Create Pet card component
+- Create Profile card component
+- 
 
 ### Node Server
 - ~~Setup Node API server with Express~~
