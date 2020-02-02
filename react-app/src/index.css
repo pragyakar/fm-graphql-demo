@@ -13,6 +13,7 @@ body {
   font-family: var(--brand-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--white);
 }
 
 /* Navbar */
@@ -92,5 +93,53 @@ body {
 
 .line {
   border: 0.5px solid var(--line-grey);
-  width: 85%;
+}
+
+/* Body component */
+
+.body-container {
+  padding: 22px 27px 27px 27px;
+}
+
+/* Home Component */
+
+.home-top-bar {
+  padding-bottom:5px;
+}
+
+.home-title {
+  padding: 0;
+  margin: 0;
+  font-size: 33px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.home-subtitle {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: var(--brand-grey);
+}
+
+/* People Component */
+
+.page-top-bar {
+  display: grid;
+  grid-template-columns: 76% 23%;
+}
+
+.page-title {
+  padding: 0;
+  margin: 0;
+  font-size: 33px;
+  font-weight: 700;
+  margin-bottom: 7px;
+  float: left;
+}
+
+.page-button {
+  display: inline-block;
+  margin-top: 7px;
+  text-align: right;
 }

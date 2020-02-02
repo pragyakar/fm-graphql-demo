@@ -10,12 +10,14 @@ import Navbar from './Components/UIComponents/Navbar';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/pets" component={Pets}/>
-        <Route path="/people" component={People}/>
-        <Route component={NotFound} />
-      </Switch>
+      <div className="body-container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/pets" component={Pets}/>
+          <Route path="/people" component={People}/>
+          <Route component={NotFound} />
+        </Switch>
+      </div>
       <Navbar />
     </BrowserRouter>
   );

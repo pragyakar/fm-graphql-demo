@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Line from '../UIComponents/Line';
+import TitleBar from './TitleBar';
 
 const Home = () => {
   return (
-    <p>Home</p>
+    <Fragment>
+      <TitleBar />
+      <Line />
+    </Fragment>
   );
 }
 
