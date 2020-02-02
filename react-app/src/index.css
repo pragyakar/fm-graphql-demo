@@ -31,6 +31,10 @@ body {
   padding-right: 30px;
 }
 
+.navbar-grid a {
+  text-decoration: none;
+}
+
 .navbar-item {
   padding: 12px;
   color: var(--brand-grey);

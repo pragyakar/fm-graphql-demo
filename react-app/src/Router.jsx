@@ -5,6 +5,7 @@ import Home from './Components/Home';
 import Pets from './Components/Pets';
 import People from './Components/People';
 import NotFound from './Components/UIComponents/NotFound';
+import Navbar from './Components/UIComponents/Navbar';
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/people" component={People}/>
         <Route component={NotFound} />
       </Switch>
+      <Navbar />
     </BrowserRouter>
   );
 }

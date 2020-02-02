@@ -11,8 +11,8 @@
 - ~~Setup React app with CRA~~
 - ~~Setup React components structure~~
 - ~~Add brand colors and font~~
-- Create navbar component
-- Add react-router and create routes
+- ~~Create navbar component~~
+- ~~Add react-router and create routes~~
 - ~~Add icons~~
 - Create home component
 - Create pets component
