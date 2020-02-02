@@ -9,7 +9,17 @@
 
 ### React App
 - ~~Setup React app with CRA~~
-- Setup React components structure
+- ~~Setup React components structure~~
+- ~~Add brand colors and font~~
+- Create navbar component
+- Add react-router and create routes
+- Create home component
+- Create pets component
+- Create profiles component
+- Create new pet component
+- Create new profile component
+- Create pet details component
+- Create profile details component
 
 ### Node Server
 - ~~Setup Node API server with Express~~
@@ -19,6 +29,7 @@
 - ~~Add environment variables~~
 - ~~Add api endpoints for queries~~
 - ~~Add api endpoints for mutations~~
+- Add api for home page summary
 
 ### Mongo Database
 - ~~Setup Mongo DB with mongo atlas~~
