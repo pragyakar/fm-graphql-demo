@@ -4,6 +4,7 @@
   --brand-grey: #B4B4B4;
   --brand-light-grey: #F9F9F9;
   --white: #FFFFFF;
+  --line-grey: #6464641a;
   --brand-font: 'Roboto', sans-serif; 
 }
 
@@ -85,4 +86,11 @@ body {
 .button.clear {
   color: var(--brand-blue);
   font-weight: 400;
+}
+
+/* Line */
+
+.line {
+  border: 0.5px solid var(--line-grey);
+  width: 85%;
 }
