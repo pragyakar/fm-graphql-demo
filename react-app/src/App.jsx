@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserFriends, faHome, faPaw } from '@fortawesome/free-solid-svg-icons'
 
 import Router from './Router';
-import Navbar from './Components/UI Components/Navbar';
+import Navbar from './Components/UIComponents/Navbar';
 
 library.add(faUserFriends, faHome, faPaw);
 
