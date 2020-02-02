@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const activeCheck = (route, path) => {
-  if (route === path) {
+  const rootPathName = path.split('/')[1];
+  const routeName = route.split('/')[1];
+  
+  if (routeName === rootPathName) {
     return 'active';
   } else {
     return '';

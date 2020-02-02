@@ -12,7 +12,7 @@ const Pets = (props) => {
     <Fragment>
       <TopBar title={'All Pets'} clickHandler={sendToNew}/>
       <Line />
-  </Fragment>
+    </Fragment>
   );
 }
 
