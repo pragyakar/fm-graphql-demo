@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import Line from '../UIComponents/Line';
 import TitleBar from './TitleBar';
-import PetCard from '../UIComponents/Card/PetCard/PetCard';
+import PetCard from '../UIComponents/Card/PetCard';
+import OwnerCard from '../UIComponents/Card/OwnerCard';
 
 const Home = () => {
   return (
@@ -16,6 +17,13 @@ const Home = () => {
         image={''}
       />
       <Line />
+      <OwnerCard 
+        id={'123'} 
+        name={'Johanne Doe'} 
+        email={'johanne@email.com'} 
+        petCount={'2'}
+        image={''}
+      />
     </Fragment>
   );
 }

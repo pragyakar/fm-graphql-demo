@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from '../../Button';
 
-const PetCard = (props) => {
+const OwnerCard = (props) => {
 
-  const { id, name, owner, age, image } = props;
+  const { id, name, email, petCount, image } = props;
 
   return (
     <div className="card">
@@ -13,8 +13,8 @@ const PetCard = (props) => {
         </div>
         <div className="card-info">
           <span className="card-name">{name}</span>
-          <span className="card-detail">Owner: {owner}</span>
-          <span className="card-detail">Age: {age}</span>
+          <span className="card-detail">{email}</span>
+          <span className="card-detail">Pets Owned: {petCount}</span>
         </div>
         <div className="card-button">
           <Button type="light" text="show" onClick={() => {}} />
@@ -24,4 +24,4 @@ const PetCard = (props) => {
   );
 };
 
-export default PetCard;
+export default OwnerCard;

@@ -169,16 +169,15 @@ body {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  margin-bottom: 10px;
-
+  margin-bottom: 5px;
 }
 
-.card-pet-name {
+.card-name {
   font-size: 18px;
   margin-bottom: 5px;
 }
 
-.card-pet-owner, .card-pet-age {
+.card-detail {
   font-size: 12px;
   color: var(--brand-grey);
 }
