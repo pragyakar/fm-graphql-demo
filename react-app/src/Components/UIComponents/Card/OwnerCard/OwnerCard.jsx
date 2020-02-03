@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../../Button';
+import { Link } from 'react-router-dom';
 
 const OwnerCard = (props) => {
 
@@ -17,7 +18,9 @@ const OwnerCard = (props) => {
           <span className="card-detail">Pets Owned: {petCount}</span>
         </div>
         <div className="card-button">
-          <Button type="light" text="show" onClick={() => {}} />
+          <Link to={`/owners/${id}`}>
+            <Button type="light" text="show" />
+          </Link>
         </div>
       </div>
     </div>
