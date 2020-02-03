@@ -163,10 +163,15 @@ body {
   grid-gap: 10px;
 }
 
-.card-image img {
+.card-image {
   height: 75px;
   width: 75px;
+  overflow: hidden;
   border-radius: 15px;
+}
+
+.card-image img {
+  height: 75px;
 }
 
 .card-info{
@@ -218,4 +223,8 @@ body {
 
 .home-section-button {
   text-align: right;
+}
+
+.list-container {
+  margin-top: 20px;
 }

@@ -9,7 +9,7 @@ const PetCard = (props) => {
     <div className="card">
       <div className="card-grid">
         <div className="card-image">
-          <img src={image ? image : "https://via.placeholder.com/150"} alt="pet" />
+          <img src={image ? image : "https://placedog.net/300/300"} alt="pet" />
         </div>
         <div className="card-info">
           <span className="card-name">{name}</span>
