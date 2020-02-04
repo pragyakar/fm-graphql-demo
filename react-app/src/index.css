@@ -16,6 +16,10 @@ body {
   background-color: var(--white);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* Navbar */
 
 .navbar {
@@ -65,6 +69,7 @@ body {
   font-size: 12px;
   letter-spacing: 0.5px;
   white-space: nowrap;
+  text-align: center;
 }
 
 .button:hover {
@@ -100,6 +105,7 @@ body {
 
 .body-container {
   padding: 22px 27px 27px 27px;
+  margin-bottom: 30px;
 }
 
 /* Home Component */
@@ -143,4 +149,82 @@ body {
   display: inline-block;
   margin-top: 7px;
   text-align: right;
+}
+
+/* Petcard */
+
+.card {
+  margin-bottom: 15px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 10px;
+}
+
+.card-image {
+  height: 75px;
+  width: 75px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.card-image img {
+  height: 75px;
+}
+
+.card-info{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.card-name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card-detail {
+  font-size: 12px;
+  color: var(--brand-grey);
+}
+
+.card-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+
+/* Home Pets List */
+
+.home-section {
+  margin-bottom: 15px;
+  margin-top: 12px;
+}
+
+.home-section-title-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.home-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-bottom: 15px;
+}
+
+.home-section-button {
+  text-align: right;
+}
+
+.list-container {
+  margin-top: 20px;
 }

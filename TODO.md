@@ -14,18 +14,24 @@
 - ~~Create navbar component~~
 - ~~Add react-router and create routes~~
 - ~~Add icons~~
-- Create home component
-- Create pets component
-- Create profiles component
+- ~~Create home component~~
+- ~~Create pets component~~
+- ~~Create owners component~~
+- ~~Create Pet card component~~
+- ~~Create Owner card component~~
 - Create new pet component
-- Create new profile component
+- Create new owner component
 - Create pet details component
-- Create profile details component
+- Create owner details component
+- Add API call for home page
+- Add API call for fetching pets list
+- Add API call for fetching owners list
+- Add API call for fetching pet detail
+- Add API call for fetching owner detail
+- Add API call for posting new pet
+- Add API call for posting new owner
 - Create 404 component
 - Create empty state
-- Create Pet card component
-- Create Profile card component
-- 
 
 ### Node Server
 - ~~Setup Node API server with Express~~

@@ -2,12 +2,11 @@ import React from 'react';
 
 const Button = (props) => {
 
-  const { text, type, onClick } = props;
+  const { text, type } = props;
 
   return (
     <span 
       className={`button ${ type ? type : 'dark' }`}
-      onClick={onClick}
     >
       {text}
     </span>

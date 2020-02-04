@@ -7,14 +7,24 @@ import Owners from './Components/Owners';
 import NotFound from './Components/UIComponents/NotFound';
 import Navbar from './Components/UIComponents/Navbar';
 
+const UnderDevelopment = () => {
+  return (
+    <p>Under Development</p>
+  )
+}
+
 const Router = () => {
   return (
     <BrowserRouter>
       <div className="body-container">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/pets" component={Pets}/>
-          <Route path="/owners" component={Owners}/>
+          <Route exact path="/pets" component={Pets}/>
+          <Route exact path="/pets/add" component={UnderDevelopment}/>
+          <Route path="/pets/:id" component={UnderDevelopment}/>
+          <Route exact path="/owners" component={Owners}/>
+          <Route exact path="/owners/add" component={UnderDevelopment}/>
+          <Route path="/owners/:id" component={UnderDevelopment}/>
           <Route component={NotFound} />
         </Switch>
       </div>
