@@ -143,9 +143,10 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     profiles: {
       type: new GraphQLList(ProfileType),
+      args: { first: { type: GraphQLInt } },
       resolve(parent, args) {
         // return profiles;
-        return Profile.find({});
+        return Profile.find({}).limit(args.first);
       }
     },
     profile: {
