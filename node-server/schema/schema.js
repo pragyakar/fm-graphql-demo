@@ -160,9 +160,10 @@ const RootQuery = new GraphQLObjectType({
     },
     pets: {
       type: new GraphQLList(PetType),
+      args: { first: { type: GraphQLInt } },
       resolve(parent, args) {
         // return pets
-        return Pet.find({});
+        return Pet.find({}).limit(args.first);
       }
     },
     pet: {
