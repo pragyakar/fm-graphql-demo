@@ -10,40 +10,37 @@ const getPetsQuery = gql`
     pets {
       id,
       name,
+      imageUrl,
+      age
+      owner {
+        name
+      }
     }
   }
 `
 
 const Pets = (props) => {
-  console.log(props);
+
+  const { loading, pets } = props.data;
   
   return (
     <Fragment>
       <TopBar title={'All Pets'} sendTo={'pets/add'}/>
       <Line />
-      <div className="list-container">
-        <PetCard 
-          id={'123'} 
-          name={'Doggo Doe'} 
-          owner={'Johanne Doe'} 
-          age={'1'}
-          image={''}
-        />
-        <PetCard 
-          id={'123'} 
-          name={'Doggo Doe'} 
-          owner={'Johanne Doe'} 
-          age={'1'}
-          image={''}
-        />
-        <PetCard 
-          id={'123'} 
-          name={'Doggo Doe'} 
-          owner={'Johanne Doe'} 
-          age={'1'}
-          image={''}
-        />
-      </div>
+      { loading ? 'Loading': 
+        <div className="list-container">
+          { pets && pets.map((pet) => (
+            <PetCard 
+              key={pet.id}
+              id={pet.id} 
+              name={pet.name} 
+              owner={pet.owner} 
+              age={pet.age}
+              image={pet.imageUrl}
+            />
+          ))}
+        </div>  
+      }
     </Fragment>
   );
 }
