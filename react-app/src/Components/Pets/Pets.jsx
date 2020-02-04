@@ -2,9 +2,21 @@ import React, { Fragment } from 'react';
 import TopBar from '../UIComponents/TopBar';
 import Line from '../UIComponents/Line';
 import PetCard from '../UIComponents/Card/PetCard';
+import { gql } from 'apollo-boost';
+import { graphql } from 'react-apollo';
 
-const Pets = () => {
+const getPetsQuery = gql`
+  {
+    pets {
+      id,
+      name,
+    }
+  }
+`
 
+const Pets = (props) => {
+  console.log(props);
+  
   return (
     <Fragment>
       <TopBar title={'All Pets'} sendTo={'pets/add'}/>
@@ -36,4 +48,4 @@ const Pets = () => {
   );
 }
 
-export default Pets;
+export default graphql(getPetsQuery)(Pets);
