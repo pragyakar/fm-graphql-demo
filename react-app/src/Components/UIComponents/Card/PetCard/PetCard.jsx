@@ -14,7 +14,7 @@ const PetCard = (props) => {
         </div>
         <div className="card-info">
           <span className="card-name">{name}</span>
-          <span className="card-detail">Owner: {owner}</span>
+          <span className="card-detail">Owner: {owner.name}</span>
           <span className="card-detail">Age: {age}</span>
         </div>
         <div className="card-button">

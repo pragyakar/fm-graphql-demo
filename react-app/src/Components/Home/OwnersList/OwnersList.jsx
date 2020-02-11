@@ -1,9 +1,15 @@
 import React from 'react';
+import { graphql } from 'react-apollo';
 import { Link } from 'react-router-dom';
+
 import OwnerCard from '../../UIComponents/Card/OwnerCard';
 import Button from '../../UIComponents/Button';
+import { getSomeOwnersQuery } from '../../../queries/owners';
 
-const OwnerList = () => {
+const OwnerList = (props) => {
+
+  const { loading, profiles } = props.data;
+
   return (
     <div className="home-section">
       <div className="home-section-title-bar">
@@ -14,29 +20,20 @@ const OwnerList = () => {
           </Link>
         </span>
       </div>
-      <OwnerCard 
-        id={'123'} 
-        name={'Johanne Doe'} 
-        email={'johanne@email.com'} 
-        petCount={'2'}
-        image={''}
-      />
-      <OwnerCard 
-        id={'123'} 
-        name={'Johanne Doe'} 
-        email={'johanne@email.com'} 
-        petCount={'2'}
-        image={''}
-      />
-      <OwnerCard 
-        id={'123'} 
-        name={'Johanne Doe'} 
-        email={'johanne@email.com'} 
-        petCount={'2'}
-        image={''}
-      />
+      { loading ? 'Loading' : 
+        profiles && profiles.map((profile) => (
+          <OwnerCard 
+            key={profile.id}
+            id={profile.id} 
+            name={profile.name} 
+            email={profile.email} 
+            petCount={profile.pets.length}
+            image={profile.imageUrl}
+          />
+        ))
+      }
     </div>
   );
 }
 
-export default OwnerList;
+export default graphql(getSomeOwnersQuery)(OwnerList);

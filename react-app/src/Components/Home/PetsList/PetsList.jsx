@@ -1,9 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { graphql } from 'react-apollo';
+
 import PetCard from '../../UIComponents/Card/PetCard';
 import Button from '../../UIComponents/Button';
-import { Link } from 'react-router-dom';
+import { getSomePetsQuery } from '../../../queries/pets';
 
-const PetsList = () => {
+const PetsList = (props) => {
+
+  const { loading, pets } = props.data;
 
   return (
     <div className="home-section">
@@ -15,29 +20,20 @@ const PetsList = () => {
           </Link>
         </span>
       </div>
-      <PetCard 
-        id={'123'} 
-        name={'Doggo Doe'} 
-        owner={'Johanne Doe'} 
-        age={'1'}
-        image={''}
-      />
-      <PetCard 
-        id={'123'} 
-        name={'Doggo Doe'} 
-        owner={'Johanne Doe'} 
-        age={'1'}
-        image={''}
-      />
-      <PetCard 
-        id={'123'} 
-        name={'Doggo Doe'} 
-        owner={'Johanne Doe'} 
-        age={'1'}
-        image={''}
-      />
+      { loading ? 'Loading': 
+        pets && pets.map((pet) => (
+          <PetCard 
+            key={pet.id}
+            id={pet.id} 
+            name={pet.name} 
+            owner={pet.owner} 
+            age={pet.age}
+            image={pet.imageUrl}
+          />
+        ))
+      }
     </div>
   );
 }
 
-export default PetsList;
+export default graphql(getSomePetsQuery)(PetsList);

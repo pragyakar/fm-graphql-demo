@@ -132,7 +132,7 @@ const PetType = new GraphQLObjectType({
       type: ProfileType,
       resolve(parent, args) {
         // return _.find(profiles, { id: parent.ownerId})
-        return Profile.findById(parent.id);
+        return Profile.findById(parent.ownerId);
       }
     }
   })
@@ -143,9 +143,10 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     profiles: {
       type: new GraphQLList(ProfileType),
+      args: { first: { type: GraphQLInt } },
       resolve(parent, args) {
         // return profiles;
-        return Profile.find({});
+        return Profile.find({}).limit(args.first);
       }
     },
     profile: {
@@ -159,9 +160,10 @@ const RootQuery = new GraphQLObjectType({
     },
     pets: {
       type: new GraphQLList(PetType),
+      args: { first: { type: GraphQLInt } },
       resolve(parent, args) {
         // return pets
-        return Pet.find({});
+        return Pet.find({}).limit(args.first);
       }
     },
     pet: {

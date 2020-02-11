@@ -6,6 +6,8 @@ import Pets from './Components/Pets';
 import Owners from './Components/Owners';
 import NotFound from './Components/UIComponents/NotFound';
 import Navbar from './Components/UIComponents/Navbar';
+import OwnerDetails from './Components/Owners/OwnerDetails';
+import AddPet from './Components/Pets/AddPet';
 
 const UnderDevelopment = () => {
   return (
@@ -20,11 +22,11 @@ const Router = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/pets" component={Pets}/>
-          <Route exact path="/pets/add" component={UnderDevelopment}/>
+          <Route exact path="/pets/add" component={AddPet}/>
           <Route path="/pets/:id" component={UnderDevelopment}/>
           <Route exact path="/owners" component={Owners}/>
           <Route exact path="/owners/add" component={UnderDevelopment}/>
-          <Route path="/owners/:id" component={UnderDevelopment}/>
+          <Route path="/owners/:id" component={OwnerDetails}/>
           <Route component={NotFound} />
         </Switch>
       </div>
