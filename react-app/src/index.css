@@ -228,3 +228,69 @@ body {
 .list-container {
   margin-top: 20px;
 }
+
+/* Form component */
+.form-container {
+  width: 95%;
+}
+
+
+.field {
+  padding: 10px 0px;
+}
+
+.field input {
+  width: 100%;
+  display: inline-block;
+  padding: 35px 10px 10px 10px;
+  border: 0;
+  background-color: rgba(73, 73, 73, 0.1);
+  border-radius: 5px;
+  font-size: 17px;
+}
+
+.field label {
+  padding: 10px;
+  position: absolute;
+  color: var(--brand-blue);
+  font-size: 14px;
+}
+
+.select-field {
+  padding: 10px 0px;
+}
+
+
+.select-field select {
+  width: 106%;
+  padding: 10px 20px 10px 10px;
+  border: 0;
+  background-color: rgba(73, 73, 73, 0.1);
+  border-radius: 5px;
+  font-size: 17px;
+}
+
+.btn-submit {
+  width: 106%;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  background-color: var(--brand-blue);
+  color: var(--white);
+  font-size: 15px;
+  margin-top: 10px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.btn-submit:hover {
+  cursor: pointer;
+}
+
+
+.error-msg {
+  display: block;
+  margin: 10px 0px 0px 0px;
+  color: rgb(167, 0, 0);
+  font-size: 12px;
+}

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { graphql } from 'react-apollo';
 import { flowRight as compose } from 'lodash';
@@ -27,52 +27,77 @@ const AddPetForm = (props) => {
       }
     });
   }
-  
+
   return (
-    <Fragment>
-    { loading ? 'Loading' :
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="field">
-          <label>Pet Name</label>
-          <input type="text" name="name" ref={register}/>
-          {errors.name && <p>{errors.name.message}</p> }
-        </div>
-        <div className="field">
-          <label>Animal</label>
-          <input type="text" name="animal" ref={register}/>
-          {errors.animal && <p>{errors.animal.message}</p>}
-        </div>
-        <div className="field">
-          <label>Breed</label>
-          <input type="text" name="breed" ref={register}/>
-          {errors.breed && <p>{errors.breed.message}</p> }
-        </div>
-        <div className="field">
-          <label>Age</label>
-          <input type="number" name="age" ref={register}/>
-          {errors.age && <p>{errors.age.message}</p> }
-        </div>
-        <div className="field">
-          <label>Image Url</label>
-          <input type="text" name="imageUrl" ref={register}/>
-          {errors.imageUrl && <p>{errors.imageUrl.message}</p> }
-        </div>
-        <div className="field">
-          <label>Owner</label>
-          <select ref={register} name="ownerId">
-            <option value="">Select owner</option>
-            { profiles && profiles.map((owner) =>
-              <option value={owner.id} key={owner.id}>
-                {owner.name}
-              </option>
-            )}
-          </select>
-            {errors.ownerId && <p>{errors.ownerId.message}</p> }
-        </div>
-        <button type="submit">Add</button>
-      </form>
-    }
-    </Fragment>
+    <div className="form-container">
+      { loading ? 'Loading' :
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="field">
+            <label>What name does your pet answer to?</label>
+            <input 
+              type="text" 
+              name="name" 
+              ref={register}
+              placeholder={"Pet Name"}
+            />
+            {errors.name && <span className="error-msg">{errors.name.message}</span> }
+          </div>
+          <div className="field">
+            <label>What species is your pet?</label>
+            <input 
+              type="text" 
+              name="animal" 
+              ref={register}
+              placeholder={"Animal Species"}  
+            />
+            {errors.animal && <span className="error-msg">{errors.animal.message}</span>}
+          </div>
+          <div className="field">
+            <label>What breed is your pet?</label>
+            <input 
+              type="text" 
+              name="breed" 
+              ref={register}
+              placeholder={"Breed Name"}
+            />
+            {errors.breed && <span className="error-msg">{errors.breed.message}</span> }
+          </div>
+          <div className="field">
+            <label>How old is your pet?</label>
+            <input 
+              type="number" 
+              name="age" 
+              ref={register}
+              placeholder={"Age of your pet"}
+            />
+            {errors.age && <span className="error-msg">{errors.age.message}</span> }
+          </div>
+          <div className="field">
+            <label>Add a picture of your pet</label>
+            <input 
+              type="text" 
+              name="imageUrl" 
+              ref={register}
+              placeholder={"URL of a picture of your pet"}
+            />
+            {errors.imageUrl && <span className="error-msg">{errors.imageUrl.message}</span> }
+          </div>
+          <div className="select-field">
+            {/* <label>Owner</label> */}
+            <select ref={register} name="ownerId">
+              <option value="" className="label">Select owner</option>
+              { profiles && profiles.map((owner) =>
+                <option value={owner.id} key={owner.id}>
+                  {owner.name}
+                </option>
+              )}
+            </select>
+            {errors.ownerId && <span className="error-msg">{errors.ownerId.message}</span> }
+          </div>
+          <button type="submit" className="btn-submit">GO</button>
+        </form>
+      }
+    </div>
   );
 }
 
