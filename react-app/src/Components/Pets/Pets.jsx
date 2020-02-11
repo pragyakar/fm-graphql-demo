@@ -1,23 +1,10 @@
 import React, { Fragment } from 'react';
+import { graphql } from 'react-apollo';
+
 import TopBar from '../UIComponents/TopBar';
 import Line from '../UIComponents/Line';
 import PetCard from '../UIComponents/Card/PetCard';
-import { gql } from 'apollo-boost';
-import { graphql } from 'react-apollo';
-
-const getPetsQuery = gql`
-  {
-    pets {
-      id,
-      name,
-      imageUrl,
-      age
-      owner {
-        name
-      }
-    }
-  }
-`
+import { getPetsQuery }  from '../../queries/pets';
 
 const Pets = (props) => {
 

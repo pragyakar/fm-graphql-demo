@@ -1,23 +1,10 @@
 import React, { Fragment } from 'react';
+import { graphql } from 'react-apollo';
+
 import TopBar from '../UIComponents/TopBar/TopBar';
 import Line from '../UIComponents/Line';
 import OwnerCard from '../UIComponents/Card/OwnerCard';
-import { gql } from 'apollo-boost';
-import { graphql } from 'react-apollo';
-
-const getOwnersQuery = gql`
-  {
-    profiles {
-      id,
-      name,
-      email,
-      imageUrl,
-      pets {
-        id
-      }
-    }
-  }
-`
+import { getOwnersQuery } from '../../queries/owners';
 
 const Owners = (props) => {
 

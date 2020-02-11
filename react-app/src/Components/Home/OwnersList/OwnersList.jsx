@@ -1,23 +1,11 @@
 import React from 'react';
+import { graphql } from 'react-apollo';
 import { Link } from 'react-router-dom';
+
 import OwnerCard from '../../UIComponents/Card/OwnerCard';
 import Button from '../../UIComponents/Button';
-import { gql } from 'apollo-boost';
-import { graphql } from 'react-apollo';
+import { getSomeOwnersQuery } from '../../../queries/owners';
 
-const getOwnersQuery = gql`
-  {
-    profiles(first: 3) {
-      id,
-      name,
-      email,
-      imageUrl,
-      pets {
-        id
-      }
-    }
-  }
-`
 const OwnerList = (props) => {
 
   const { loading, profiles } = props.data;
@@ -48,4 +36,4 @@ const OwnerList = (props) => {
   );
 }
 
-export default graphql(getOwnersQuery)(OwnerList);
+export default graphql(getSomeOwnersQuery)(OwnerList);

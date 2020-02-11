@@ -1,23 +1,10 @@
 import React from 'react';
-import PetCard from '../../UIComponents/Card/PetCard';
-import Button from '../../UIComponents/Button';
 import { Link } from 'react-router-dom';
-import { gql } from 'apollo-boost';
 import { graphql } from 'react-apollo';
 
-const getPetsQuery = gql`
-  {
-    pets(first: 3) {
-      id,
-      name,
-      imageUrl,
-      age
-      owner {
-        name
-      }
-    }
-  }
-`
+import PetCard from '../../UIComponents/Card/PetCard';
+import Button from '../../UIComponents/Button';
+import { getSomePetsQuery } from '../../../queries/pets';
 
 const PetsList = (props) => {
 
@@ -49,4 +36,4 @@ const PetsList = (props) => {
   );
 }
 
-export default graphql(getPetsQuery)(PetsList);
+export default graphql(getSomePetsQuery)(PetsList);
