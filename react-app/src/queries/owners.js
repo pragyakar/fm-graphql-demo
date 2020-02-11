@@ -54,3 +54,16 @@ export const getOwnerDetailsQuery = gql`
   }
 `
 
+export const addOwnerMutation = gql`
+  mutation($name: String!, $imageUrl: String!, $bio: String, $email: String!) {
+    addProfile(
+      name: $name,
+      imageUrl: $imageurl, 
+      bio: $bio,
+      email: $email,
+    ) {
+      id,
+      name
+    }
+  }
+`

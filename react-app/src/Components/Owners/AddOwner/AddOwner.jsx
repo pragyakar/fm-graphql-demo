@@ -1,18 +1,16 @@
 import React, { Fragment } from 'react';
-
 import TopBar from '../../UIComponents/TopBar';
 import Line from '../../UIComponents/Line';
-import AddPetForm from './AddPetForm';
+import AddOwnerForm from './AddOwnerForm';
 
-const AddPet = () => {
-  
+const AddOwner = () => {
   return (
     <Fragment>
-      <TopBar title={'Add New Pets'} />
+      <TopBar title={'Add New Owner'} />
       <Line />
-      <AddPetForm />
+      <AddOwnerForm />
     </Fragment>
   );
 }
 
-export default AddPet;
+export default AddOwner;
