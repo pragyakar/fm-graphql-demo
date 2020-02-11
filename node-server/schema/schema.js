@@ -132,7 +132,7 @@ const PetType = new GraphQLObjectType({
       type: ProfileType,
       resolve(parent, args) {
         // return _.find(profiles, { id: parent.ownerId})
-        return Profile.findById(parent.id);
+        return Profile.findById(parent.ownerId);
       }
     }
   })

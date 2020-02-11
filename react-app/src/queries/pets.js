@@ -7,7 +7,7 @@ export const getPetsQuery = gql`
       name,
       imageUrl,
       age
-      profile {
+      owner {
         name
       }
     }
