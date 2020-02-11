@@ -23,12 +23,12 @@
 - Create new owner component
 - Create pet details component
 - Create owner details component
-- Add API call for home page
-- Add API call for fetching pets list
-- Add API call for fetching owners list
+- ~~Add API call for home page~~
+- ~~Add API call for fetching pets list~~
+- ~~Add API call for fetching owners list~~
 - Add API call for fetching pet detail
-- Add API call for fetching owner detail
-- Add API call for posting new pet
+- ~~Add API call for fetching owner detail~~
+- ~~Add API call for posting new pet~~
 - Add API call for posting new owner
 - Create 404 component
 - Create empty state
@@ -41,7 +41,7 @@
 - ~~Add environment variables~~
 - ~~Add api endpoints for queries~~
 - ~~Add api endpoints for mutations~~
-- Add api for home page summary
+- ~~Add api for home page summary~~
 
 ### Mongo Database
 - ~~Setup Mongo DB with mongo atlas~~
