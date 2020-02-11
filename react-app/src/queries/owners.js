@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
 export const getOwnersQuery = gql`
-  {
+  query {
     profiles {
       id,
       name,
@@ -15,24 +15,42 @@ export const getOwnersQuery = gql`
 `
 
 export const getSomeOwnersQuery = gql`
-{
-  profiles(first: 3) {
-    id,
-    name,
-    email,
-    imageUrl,
-    pets {
-      id
+  query {
+    profiles(first: 3) {
+      id,
+      name,
+      email,
+      imageUrl,
+      pets {
+        id
+      }
     }
   }
-}
 `
 
 export const getOwnersDropdownQuery = gql`
-{
-  profiles {
-    id,
-    name
+  query {
+    profiles {
+      id,
+      name
+    }
   }
-}
 `
+
+export const getOwnerDetailsQuery = gql`
+  query($id: ID!) {
+    profile(id: $id) {
+      id, 
+      name,
+      imageUrl, 
+      email, 
+      bio,
+      pets {
+        name, 
+        animal, 
+        breed
+      }
+    }
+  }
+`
+
