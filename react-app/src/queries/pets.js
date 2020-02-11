@@ -7,7 +7,7 @@ export const getPetsQuery = gql`
       name,
       imageUrl,
       age
-      owner {
+      profile {
         name
       }
     }
@@ -25,4 +25,20 @@ export const getSomePetsQuery = gql`
     }
   }
 }
+`
+
+export const addPetMutation = gql`
+  mutation($name: String!, $animal: String!, $breed: String!, $age: Int!, $imageUrl: String!, $ownerId: ID! ) {
+    addPet(
+      name: $name,
+      animal: $animal,
+      breed: $breed,
+      age: $age,
+      imageUrl: $imageUrl,
+      ownerId: $ownerId
+    ){
+      id,
+      name
+    }
+  }
 `
