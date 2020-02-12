@@ -46,6 +46,7 @@ export const getOwnerDetailsQuery = gql`
       email, 
       bio,
       pets {
+        id,
         name, 
         owner {
           name
