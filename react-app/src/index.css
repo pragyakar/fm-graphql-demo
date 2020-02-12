@@ -294,3 +294,41 @@ body {
   color: rgb(167, 0, 0);
   font-size: 12px;
 }
+
+.no-spaces {
+  padding: 0;
+}
+
+.owner-details-box {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 20px 0px;
+}
+
+.owner-image img {
+  height: 110px;
+  border-radius: 15px;
+}
+
+.owner-info {
+  padding-left: 20px;
+}
+
+.owner-info span {
+  display: block;
+}
+
+.owner-info-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.owner-info-email {
+  font-size: 15px;
+  color: var(--brand-grey);
+  margin: 3px 0px 5px 0px;
+}
+
+.owner-info-bio {
+  font-size: 15px;
+}

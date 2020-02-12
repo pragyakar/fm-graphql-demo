@@ -12,7 +12,7 @@ const AddOwnerForm = (props) => {
   });
 
   const onSubmit = data => {
-    props.addOwnerMutation({
+    props.addOwner({
       variables: {
         name: data.name, 
         imageUrl: data.imageUrl,
@@ -71,4 +71,6 @@ const AddOwnerForm = (props) => {
   );
 }
 
-export default graphql(addOwnerMutation)(AddOwnerForm);
+export default graphql(
+  addOwnerMutation, { name: "addOwner"}
+)(AddOwnerForm);
