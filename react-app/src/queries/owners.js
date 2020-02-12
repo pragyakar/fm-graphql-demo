@@ -47,8 +47,11 @@ export const getOwnerDetailsQuery = gql`
       bio,
       pets {
         name, 
-        animal, 
-        breed
+        owner {
+          name
+        }
+        age,
+        imageUrl,
       }
     }
   }
