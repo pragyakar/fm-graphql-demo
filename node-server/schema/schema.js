@@ -172,7 +172,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         args.id
         // return _.find(pets, { id: args.id })
-        return Pets.findById(args.id);
+        return Pet.findById(args.id);
       }
     }
   }

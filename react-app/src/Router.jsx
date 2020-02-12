@@ -9,6 +9,7 @@ import Navbar from './Components/UIComponents/Navbar';
 import OwnerDetails from './Components/Owners/OwnerDetails';
 import AddPet from './Components/Pets/AddPet';
 import AddOwner from './Components/Owners/AddOwner';
+import PetDetails from './Components/Pets/PetDetails/PetDetails';
 
 const UnderDevelopment = () => {
   return (
@@ -24,7 +25,7 @@ const Router = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/pets" component={Pets}/>
           <Route exact path="/pets/add" component={AddPet}/>
-          <Route path="/pets/:id" component={UnderDevelopment}/>
+          <Route path="/pets/:id" component={PetDetails}/>
           <Route exact path="/owners" component={Owners}/>
           <Route exact path="/owners/add" component={AddOwner}/>
           <Route path="/owners/:id" component={OwnerDetails}/>
